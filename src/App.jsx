@@ -1,5 +1,8 @@
 import React from 'react';
+import LogInFrom from './LogInForm';
 
-const App = () => <h1>TEST</h1>;
+const App = () => (
+  <LogInFrom />
+);
 
 export default App;
