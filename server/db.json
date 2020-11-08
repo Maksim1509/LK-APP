@@ -3,14 +3,35 @@
     {
       "id": 1,
       "userName": "admin",
-      "password": "1111"
-    }
-  ],
-  "contacts": [
+      "password": "1111",
+      "userContacts": [
+        {
+          "name": "Vasya",
+          "phoneNumber": "905-111-11-11"
+        },
+        {
+          "name": "Petya",
+          "phoneNumber": "905-222-22-22"
+        }
+      ]
+    },
     {
-      "id": 1,
-      "name": "Vasya",
-      "usersId": 1
+      "userName": "maksim1509",
+      "password": "1111",
+      "id": 2,
+      "userContacts": []
+    },
+    {
+      "userName": "dasha",
+      "password": "1234",
+      "id": 3,
+      "userContacts": []
+    },
+    {
+      "userName": "max",
+      "password": "rfvtgb",
+      "id": 4,
+      "userContacts": []
     }
   ]
 }

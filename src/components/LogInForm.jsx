@@ -1,32 +1,41 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Formik, Form, Field } from 'formik';
-import useLoginActions from './slices/login';
+import { useHistory } from 'react-router-dom';
+import { asyncActions } from '../slices';
+import authContext from '../context';
 
 const LogInFrom = () => {
   const [submitType, setSebmitType] = useState(null);
+  const { useLoginActions } = asyncActions;
   const { loginRequest, singinRequest } = useLoginActions();
+  const context = useContext(authContext);
+  const history = useHistory();
 
-  const submitHandle = async ({ login, password }, { resetForm }) => {
+  const submitHandle = async ({ userName, password }, { resetForm }) => {
     console.log(submitType);
     if (submitType === 'login') {
-      await loginRequest(login, password);
+      const isAuth = await loginRequest(userName, password);
+      if (isAuth) {
+        context.user = userName;
+        history.push('/private');
+      }
       resetForm();
     } else {
-      await singinRequest(login, password);
+      await singinRequest(userName, password);
       resetForm();
     }
   };
   const form = (
     <div className="form-container">
       <Formik
-        initialValues={{ login: '', password: '' }}
+        initialValues={{ userName: '', password: '' }}
         onSubmit={submitHandle}
       >
         <Form>
           <div className="form-group">
-            <label htmlFor="login">Login</label>
-            <Field className="form-control" id="login" type="text" name="login" placeholder="Login" required />
+            <label htmlFor="userName">Login</label>
+            <Field className="form-control" id="login" type="text" name="userName" placeholder="Login" required />
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
