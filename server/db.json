@@ -8,76 +8,60 @@
     {
       "userName": "maksim1509",
       "password": "1111",
-      "id": 2,
-      "userContacts": []
+      "id": 2
     },
     {
       "userName": "dasha",
       "password": "1234",
-      "id": 3,
-      "userContacts": []
+      "id": 3
     },
     {
       "userName": "max",
       "password": "rfvtgb",
-      "id": 4,
-      "userContacts": []
+      "id": 4
     },
     {
       "userName": "maxim",
       "password": "2222",
       "id": 5
-    }
-  ],
-  "contacts": [
-    {
-      "id": 1,
-      "name": "Vasya",
-      "phoneNumber": "905-111-11-11",
-      "userId": 1
     },
     {
-      "name": "t",
-      "phoneNumber": "1",
-      "userId": "1",
-      "id": 2
-    },
-    {
-      "name": "t",
-      "phoneNumber": "22222",
-      "userId": "1",
-      "id": 3
-    },
-    {
-      "name": "trr",
-      "phoneNumber": "1111",
-      "userId": "1",
-      "id": 4
-    },
-    {
-      "name": "dasha",
-      "phoneNumber": "5555",
-      "userId": "userName",
-      "id": 5
-    },
-    {
-      "name": "max",
-      "phoneNumber": "5555",
-      "userId": "admin",
+      "userName": "ррррррр",
+      "password": "12345678",
       "id": 6
     },
     {
-      "name": "max",
-      "phoneNumber": "111111",
-      "userId": "1",
+      "userName": "www",
+      "password": "12345",
       "id": 7
     },
     {
-      "name": "max",
-      "phoneNumber": "111111",
-      "userId": "1",
+      "userName": "xxx",
+      "password": "xxx",
       "id": 8
     },
+    {
+      "userName": "yyyy",
+      "password": "yyy",
+      "id": 9
+    },
+    {
+      "userName": "uuu",
+      "password": "uuu",
+      "id": 10
+    },
+    {
+      "userName": "ooo",
+      "password": "ooo",
+      "id": 11
+    },
+    {
+      "userName": "Daria8",
+      "password": "111111",
+      "id": 12
+    }
+  ],
+  "contacts": [
     {
       "name": "dasha",
       "phoneNumber": "655555",
@@ -85,16 +69,22 @@
       "id": 9
     },
     {
-      "name": "tttt",
-      "phoneNumber": "777777",
+      "name": "petya",
+      "phoneNumber": "555555",
       "userId": "1",
-      "id": 10
+      "id": 12
+    },
+    {
+      "name": "dasha2",
+      "phoneNumber": "222222",
+      "userId": "1",
+      "id": 14
     },
     {
       "name": "max",
-      "phoneNumber": "555555",
+      "phoneNumber": "5555",
       "userId": "5",
-      "id": 11
+      "id": 15
     }
   ]
 }

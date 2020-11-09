@@ -26,10 +26,14 @@ const userSlice = createSlice({
     addContact: (state, { payload }) => {
       state.userContacts.push(payload);
     },
+    removeContact: (state, { payload }) => {
+      const { id } = payload;
+      state.userContacts = state.userContacts.filter((contact) => contact.id !== id);
+    },
   },
 });
 
-const { userLogin, addContact } = userSlice.actions;
+const { userLogin, addContact, removeContact } = userSlice.actions;
 
 const useLoginActions = () => {
   const dispatch = useDispatch();
@@ -38,7 +42,6 @@ const useLoginActions = () => {
     if (password === inputPassword) {
       console.log('LOGIN SUCCES');
       const { data: userContacts } = await axios.get(`${routes.usersPath()}/${id}/contacts`);
-      console.log(userContacts);
       dispatch(userLogin({ id, userName, userContacts }));
       return true;
     }
@@ -51,9 +54,12 @@ const useLoginActions = () => {
     console.log(data);
     if (data.length > 0) {
       console.log('login is busy');
-      return;
+      return false;
     }
-    await axios.post(routes.usersPath(), { userName, password });
+    const { data: { id } } = await axios.post(routes.usersPath(), { userName, password });
+    const { data: userContacts } = await axios.get(`${routes.usersPath()}/${id}/contacts`);
+    dispatch(userLogin({ id, userName, userContacts }));
+    return true;
   };
   return {
     loginRequest,
@@ -67,8 +73,14 @@ const useContactsActions = () => {
     const { data } = await axios.post(`${routes.usersPath()}/${id}/contacts`, contact);
     dispatch(addContact(data));
   };
+  const removeContactRequest = async (id) => {
+    const data = await axios.delete(routes.contactsPath(id));
+    console.log(data);
+    dispatch(removeContact({ id }));
+  };
   return {
     addContactRequest,
+    removeContactRequest,
   };
 };
 

@@ -22,7 +22,11 @@ const LogInFrom = () => {
       }
       resetForm();
     } else {
-      await singinRequest(userName, password);
+      const isAuth = await singinRequest(userName, password);
+      if (isAuth) {
+        context.user = userName;
+        history.push('/private');
+      }
       resetForm();
     }
   };
