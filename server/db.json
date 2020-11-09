@@ -3,17 +3,7 @@
     {
       "id": 1,
       "userName": "admin",
-      "password": "1111",
-      "userContacts": [
-        {
-          "name": "Vasya",
-          "phoneNumber": "905-111-11-11"
-        },
-        {
-          "name": "Petya",
-          "phoneNumber": "905-222-22-22"
-        }
-      ]
+      "password": "1111"
     },
     {
       "userName": "maksim1509",
@@ -32,6 +22,79 @@
       "password": "rfvtgb",
       "id": 4,
       "userContacts": []
+    },
+    {
+      "userName": "maxim",
+      "password": "2222",
+      "id": 5
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Vasya",
+      "phoneNumber": "905-111-11-11",
+      "userId": 1
+    },
+    {
+      "name": "t",
+      "phoneNumber": "1",
+      "userId": "1",
+      "id": 2
+    },
+    {
+      "name": "t",
+      "phoneNumber": "22222",
+      "userId": "1",
+      "id": 3
+    },
+    {
+      "name": "trr",
+      "phoneNumber": "1111",
+      "userId": "1",
+      "id": 4
+    },
+    {
+      "name": "dasha",
+      "phoneNumber": "5555",
+      "userId": "userName",
+      "id": 5
+    },
+    {
+      "name": "max",
+      "phoneNumber": "5555",
+      "userId": "admin",
+      "id": 6
+    },
+    {
+      "name": "max",
+      "phoneNumber": "111111",
+      "userId": "1",
+      "id": 7
+    },
+    {
+      "name": "max",
+      "phoneNumber": "111111",
+      "userId": "1",
+      "id": 8
+    },
+    {
+      "name": "dasha",
+      "phoneNumber": "655555",
+      "userId": "1",
+      "id": 9
+    },
+    {
+      "name": "tttt",
+      "phoneNumber": "777777",
+      "userId": "1",
+      "id": 10
+    },
+    {
+      "name": "max",
+      "phoneNumber": "555555",
+      "userId": "5",
+      "id": 11
     }
   ]
 }

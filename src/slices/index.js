@@ -1,5 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import userInfo, { actions as loginActions, useLoginActions } from './login';
+import userInfo, { actions as loginActions, useLoginActions, useContactsActions } from './login';
 
 export default combineReducers({
   userInfo,
@@ -11,6 +11,7 @@ const actions = {
 
 const asyncActions = {
   useLoginActions,
+  useContactsActions,
 };
 
 export {
