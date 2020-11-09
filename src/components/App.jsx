@@ -1,17 +1,17 @@
 /* eslint-disable react/prop-types */
-import React, { useContext } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
 } from 'react-router-dom';
-import authContext from '../context';
 import LogInFrom from './LogInForm';
 import PrivatePage from './PrivatePage';
 
-const renderPrivate = (auth, children) => ({ location }) => (
-  auth.user ? children
+const renderPrivate = (user, children) => ({ location }) => (
+  user ? children
     : (
       <Redirect
         to={{
@@ -23,11 +23,11 @@ const renderPrivate = (auth, children) => ({ location }) => (
 );
 
 const PrivateRoute = (props) => {
+  const { userName } = useSelector(({ userInfo }) => userInfo);
   const { children } = props;
-  const auth = useContext(authContext);
   return (
     <Route
-      render={renderPrivate(auth, children)}
+      render={renderPrivate(userName, children)}
     />
   );
 };

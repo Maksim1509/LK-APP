@@ -1,30 +1,25 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import { useHistory } from 'react-router-dom';
 import { asyncActions } from '../slices';
-import authContext from '../context';
 
 const LogInFrom = () => {
   const [submitType, setSebmitType] = useState(null);
   const { useLoginActions } = asyncActions;
   const { loginRequest, singinRequest } = useLoginActions();
-  const context = useContext(authContext);
   const history = useHistory();
 
   const submitHandle = async ({ userName, password }, { resetForm }) => {
-    console.log(submitType);
     if (submitType === 'login') {
       const isAuth = await loginRequest(userName, password);
       if (isAuth) {
-        context.user = userName;
         history.push('/private');
       }
       resetForm();
     } else {
       const isAuth = await singinRequest(userName, password);
       if (isAuth) {
-        context.user = userName;
         history.push('/private');
       }
       resetForm();

@@ -6,9 +6,18 @@ import './index.scss';
 import reducer from './slices';
 import App from './components/App';
 
+const preloadedState = {
+  userInfo: {
+    userName: null,
+    id: null,
+    userContacts: [],
+  },
+};
+
 export default () => {
   const store = configureStore({
     reducer,
+    preloadedState,
   });
 
   ReactDOM.render(

@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
-import React, { useContext } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
-import context from '../context';
 import { actions, asyncActions } from '../slices';
 
 const renderContactsList = (removeHandle) => ({ id, name, phoneNumber }) => (
@@ -33,18 +32,15 @@ const renderfForm = (submitHandle) => (
 const PrivatePage = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const authContext = useContext(context);
-  const { id, userContacts } = useSelector(({ userInfo }) => userInfo);
+  const { id, user, userContacts } = useSelector(({ userInfo }) => userInfo);
   const { useContactsActions } = asyncActions;
   const { addContactRequest, removeContactRequest } = useContactsActions();
 
   const exitHandle = () => {
-    authContext.user = null;
     dispatch(actions.userSignout());
     history.push('/');
   };
   const addHandle = (values, { resetForm }) => {
-    console.log(1111);
     addContactRequest(id, values);
     resetForm();
   };
@@ -55,7 +51,7 @@ const PrivatePage = () => {
   return (
     <div>
       <h1>private page</h1>
-      <h2>{`user name: ${authContext.user}`}</h2>
+      <h2>{`user name: ${user}`}</h2>
       {renderfForm(addHandle)}
       <ul>
         {userContacts.map(renderContactsList(removeHandle))}

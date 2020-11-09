@@ -63,12 +63,6 @@
   ],
   "contacts": [
     {
-      "name": "dasha",
-      "phoneNumber": "655555",
-      "userId": "1",
-      "id": 9
-    },
-    {
       "name": "petya",
       "phoneNumber": "555555",
       "userId": "1",
@@ -85,6 +79,18 @@
       "phoneNumber": "5555",
       "userId": "5",
       "id": 15
+    },
+    {
+      "name": "max",
+      "phoneNumber": "111111",
+      "userId": "1",
+      "id": 19
+    },
+    {
+      "name": "dasha",
+      "phoneNumber": "5555",
+      "userId": "11",
+      "id": 20
     }
   ]
 }
