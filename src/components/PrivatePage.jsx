@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import context from '../context';
-import { asyncActions } from '../slices';
+import { actions, asyncActions } from '../slices';
 
 const renderContactsList = ({ name, phoneNumber }, id) => (
   <li key={id}>
@@ -29,13 +29,16 @@ const renderfForm = (submitHandle) => (
 );
 
 const PrivatePage = () => {
+  const dispatch = useDispatch();
   const history = useHistory();
   const authContext = useContext(context);
   const { id, userContacts } = useSelector(({ userInfo }) => userInfo);
   const { useContactsActions } = asyncActions;
   const { addContactRequest } = useContactsActions();
+
   const exitHandle = () => {
     authContext.user = null;
+    dispatch(actions.userSignout());
     history.push('/');
   };
   const addContactHandle = (values, { resetForm }) => {

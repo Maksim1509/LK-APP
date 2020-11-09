@@ -20,6 +20,7 @@ const userSlice = createSlice({
     },
     userSignout: (state) => {
       state.userName = null;
+      state.id = null;
       state.userContacts = [];
     },
     addContact: (state, { payload }) => {
