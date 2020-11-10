@@ -30,10 +30,18 @@ const userSlice = createSlice({
       const { id } = payload;
       state.userContacts = state.userContacts.filter((contact) => contact.id !== id);
     },
+    editContact: (state, { payload }) => {
+      const { id: contactId, name, phoneNumber } = payload;
+      const editingContact = state.userContacts.find((contact) => contact.id === contactId);
+      editingContact.name = name;
+      editingContact.phoneNumber = phoneNumber;
+    },
   },
 });
 
-const { userLogin, addContact, removeContact } = userSlice.actions;
+const {
+  userLogin, addContact, removeContact, editContact,
+} = userSlice.actions;
 
 const useLoginActions = () => {
   const dispatch = useDispatch();
@@ -74,13 +82,17 @@ const useContactsActions = () => {
     dispatch(addContact(data));
   };
   const removeContactRequest = async (id) => {
-    const data = await axios.delete(routes.contactsPath(id));
-    console.log(data);
+    await axios.delete(routes.contactsPath(id));
     dispatch(removeContact({ id }));
+  };
+  const editContactRequest = async (contact) => {
+    await axios.patch(routes.contactsPath(contact.id), contact);
+    dispatch(editContact(contact));
   };
   return {
     addContactRequest,
     removeContactRequest,
+    editContactRequest,
   };
 };
 
