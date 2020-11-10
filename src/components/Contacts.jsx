@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Formik, Form, Field } from 'formik';
 import { asyncActions } from '../slices';
+import Search from './Search';
 
 const renderfForm = (submitHandle) => (
   <Formik
@@ -70,6 +71,7 @@ const Contacts = () => {
   return (
     <ul>
       {renderfForm(addHandle)}
+      <Search />
       {userContacts.map(renderContactsList)}
     </ul>
   );
