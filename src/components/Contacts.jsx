@@ -32,7 +32,7 @@ const renderEditForm = (options) => (
 );
 
 const Contacts = () => {
-  const { id, userContacts } = useSelector(({ userInfo }) => userInfo);
+  const { userInfo: { id }, contactsInfo: { userContacts } } = useSelector((state) => state);
   const [contactIdEdit, setContactIdEdit] = useState(null);
   const { useContactsActions } = asyncActions;
   const { addContactRequest, removeContactRequest, editContactRequest } = useContactsActions();

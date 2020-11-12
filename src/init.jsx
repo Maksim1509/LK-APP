@@ -10,6 +10,8 @@ const preloadedState = {
   userInfo: {
     userName: null,
     id: null,
+  },
+  contactsInfo: {
     userContacts: [],
   },
 };

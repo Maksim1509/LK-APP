@@ -6,7 +6,7 @@ const renderSearchList = (contact) => <li key={contact.id}>{`${contact.name}: ${
 
 const Search = () => {
   const [searchResult, setSearchResult] = useState([]);
-  const { userContacts } = useSelector(({ userInfo }) => userInfo);
+  const { userContacts } = useSelector(({ contactsInfo }) => contactsInfo);
   const searchHandle = ({ value }, { resetForm }) => {
     const res = userContacts.filter((contact) => contact.name.includes(value));
     setSearchResult(res);

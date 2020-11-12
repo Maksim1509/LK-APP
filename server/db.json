@@ -69,18 +69,17 @@
       "userName": "daria",
       "password": "daria",
       "id": 14
+    },
+    {
+      "userName": "iii",
+      "password": "iii",
+      "id": 15
     }
   ],
   "contacts": [
     {
-      "name": "petya",
-      "phoneNumber": "555555",
-      "id": 12,
-      "userId": "1"
-    },
-    {
       "name": "dasha",
-      "phoneNumber": "222222",
+      "phoneNumber": "22222266666",
       "userId": "1",
       "id": 14
     },
@@ -113,6 +112,18 @@
       "phoneNumber": "888888888",
       "userId": "14",
       "id": 22
+    },
+    {
+      "name": "dasha",
+      "phoneNumber": "333333",
+      "userId": "1",
+      "id": 23
+    },
+    {
+      "name": "max",
+      "phoneNumber": "999999",
+      "userId": "15",
+      "id": 24
     }
   ]
 }
