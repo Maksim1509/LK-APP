@@ -28,7 +28,6 @@ const contactsSlice = createSlice({
   },
   extraReducers: {
     [userLogin]: (state, { payload }) => {
-      console.log(payload);
       const { userContacts } = payload;
       state.userContacts = userContacts;
     },

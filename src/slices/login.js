@@ -31,12 +31,10 @@ const useLoginActions = () => {
   const loginRequest = async (userName, inputPassword) => {
     const { data: [{ id, password }] } = await axios.get(`${routes.usersPath()}?userName=${userName}`);
     if (password === inputPassword) {
-      console.log('LOGIN SUCCES');
       const { data: userContacts } = await axios.get(`${routes.usersPath()}/${id}/contacts`);
       dispatch(userLogin({ id, userName, userContacts }));
       return true;
     }
-    console.log('INVALID LOGIN OR PASSWORD');
     return false;
   };
 
@@ -44,7 +42,6 @@ const useLoginActions = () => {
     const { data } = await axios.get(`${routes.usersPath()}?userName=${userName}`);
     console.log(data);
     if (data.length > 0) {
-      console.log('login is busy');
       return false;
     }
     const { data: { id } } = await axios.post(routes.usersPath(), { userName, password });
