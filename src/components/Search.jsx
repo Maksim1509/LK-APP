@@ -1,34 +1,24 @@
-import React, { useState } from 'react';
+/* eslint-disable react/prop-types */
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { Formik, Form, Field } from 'formik';
 
-const renderSearchList = (contact) => <li key={contact.id}>{`${contact.name}: ${contact.phoneNumber}`}</li>;
-
-const Search = () => {
-  const [searchResult, setSearchResult] = useState([]);
+const Search = (props) => {
+  const { setSearchResult } = props;
   const { userContacts } = useSelector(({ contactsInfo }) => contactsInfo);
   const searchHandle = ({ value }, { resetForm }) => {
     const res = userContacts.filter((contact) => contact.name.includes(value));
     setSearchResult(res);
     resetForm();
   };
-  const closeSearch = () => setSearchResult([]);
   return (
     <div>
       <Formik onSubmit={searchHandle} initialValues={{ value: '' }}>
-        <Form>
-          <Field type="text" name="value" placeholder="search" />
-          <button type="submit">Search</button>
+        <Form className="form-inline my-2 my-lg-0">
+          <Field className="form-control mr-sm-2" type="search" name="value" placeholder="search" aria-label="Search" />
+          <button className="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
         </Form>
       </Formik>
-      {searchResult.length > 0 && (
-      <div>
-        <button type="button" onClick={closeSearch}>Close</button>
-        <ul>
-          {searchResult.map(renderSearchList)}
-        </ul>
-      </div>
-      )}
     </div>
   );
 };

@@ -5,7 +5,7 @@ const LoginPage = () => (
   <div className="container">
     <header>
       <nav className="navbar navbar-light bg-light">
-        <a className="navbar-brand" href="/">LK APP</a>
+        <a className="navbar-brand" href="/">YOUR CONTACTS</a>
       </nav>
     </header>
     <main>

@@ -6,21 +6,18 @@ body {
 }
 
 .container {
+  position: relative;
   background-color: #fff;
-  height: 100vh;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  min-height: 100vh;
+  padding: 40px 0;
 }
 
 .form-container {
-  position: relative;
   width: 400px;
   background-color: rgb(149, 172, 236);
   border-radius: 10px;
   padding: 20px;
-  margin: 0 auto;
+  margin: 60px auto;
   &:hover {
     box-shadow: 5px 5px 5px deepskyblue;
   }
@@ -28,7 +25,7 @@ body {
 
 .form-btns {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   margin-top: 40px;
 }
@@ -38,7 +35,51 @@ body {
   color: red;
 }
 
+
+.contacts {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-top: 1px solid silver;
+  border-bottom: 1px solid silver;
+  &-form {
+    margin: 0 20px;
+    margin-left: 48px;
+
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: 22.6%;
+  border-radius: 5px;
+  background-color: rgb(198, 220, 230);
+  margin: 10px;
+}
+
+.search-result {
+  margin-top: 30px;
+  padding: 15px 20px;
+  border: 1px solid silver;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background-color: silver;
+  &-title {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 .footer {
+  box-sizing: border-box;
+  width: 100%;
   padding: 8px 16px;
   text-align: right;
+  position: absolute;
+  bottom: 0;
 }
