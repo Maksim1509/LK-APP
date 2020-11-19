@@ -15,11 +15,16 @@ const PrivatePage = () => {
     history.push('/');
   };
   return (
-    <div>
-      <h1>private page</h1>
-      <h2>{`user name: ${userName}`}</h2>
+    <div className="container">
+      <header className="header">
+        <nav className="navbar navbar-light bg-light">
+          <a className="navbar-brand" href="/">LK APP</a>
+          <span className="navbar-text ml-auto">{userName}</span>
+          <a className="nav-link text-secondary" href="/" onClick={exitHandle}>Sign Out</a>
+        </nav>
+      </header>
       <Contacts />
-      <button type="button" onClick={exitHandle}>Exit</button>
+      <footer className="footer bg-light">All rights reseved 2020 Maksim Abdulkhalikov</footer>
     </div>
   );
 };

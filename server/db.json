@@ -88,22 +88,10 @@
   ],
   "contacts": [
     {
-      "name": "dasha",
-      "phoneNumber": "22222266666",
-      "userId": "1",
-      "id": 14
-    },
-    {
       "name": "max",
       "phoneNumber": "5555",
       "userId": "5",
       "id": 15
-    },
-    {
-      "name": "max",
-      "phoneNumber": "111111",
-      "userId": "1",
-      "id": 19
     },
     {
       "name": "dasha",
@@ -124,16 +112,40 @@
       "id": 22
     },
     {
-      "name": "dasha",
-      "phoneNumber": "333333",
-      "userId": "1",
-      "id": 23
-    },
-    {
       "name": "max",
       "phoneNumber": "999999",
       "userId": "15",
       "id": 24
+    },
+    {
+      "name": "max",
+      "phoneNumber": "5555",
+      "userId": "1",
+      "id": 25
+    },
+    {
+      "name": "max",
+      "phoneNumber": "5555",
+      "userId": "1",
+      "id": 26
+    },
+    {
+      "name": "max",
+      "phoneNumber": "5555",
+      "userId": "1",
+      "id": 27
+    },
+    {
+      "name": "max",
+      "phoneNumber": "5555",
+      "userId": "1",
+      "id": 28
+    },
+    {
+      "name": "max",
+      "phoneNumber": "5555",
+      "userId": "1",
+      "id": 29
     }
   ]
 }
