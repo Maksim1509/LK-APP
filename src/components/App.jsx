@@ -7,7 +7,7 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
-import LogInFrom from './LogInForm';
+import LoginPage from './LoginPage';
 import PrivatePage from './PrivatePage';
 
 const renderPrivate = (user, children) => ({ location }) => (
@@ -36,7 +36,7 @@ const App = () => (
   <Router>
     <Switch>
       <Route exact path="/">
-        <LogInFrom />
+        <LoginPage />
       </Route>
       <PrivateRoute path="/private">
         <PrivatePage />

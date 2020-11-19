@@ -4,6 +4,12 @@ import { Formik, Form, Field } from 'formik';
 import { useHistory } from 'react-router-dom';
 import { asyncActions } from '../slices';
 
+const spiner = (
+  <div className="ml-auto spinner-border text-dark" role="status">
+    <span className="sr-only">Loading...</span>
+  </div>
+);
+
 const LogInFrom = () => {
   const [submitType, setSebmitType] = useState(null);
   const [loginError, setLoginError] = useState(null);
@@ -48,11 +54,13 @@ const LogInFrom = () => {
             <div className="form-group">
               <label htmlFor="password">Password</label>
               <Field minLength="3" onFocus={() => setLoginError(null)} className="form-control" id="password" type="password" name="password" placeholder="password" required />
-              {!!loginError && <div className="invalid-feedback">{loginError}</div>}
+              {!!loginError && <div className="position-absolute invalid-feedback">{loginError}</div>}
             </div>
-            <button type="submit" className="btn btn-primary mr-3" onClick={() => setSebmitType('login')}>Log In</button>
-            <button type="submit" className="btn btn-danger" onClick={() => setSebmitType('signin')}>Sign In</button>
-            {isSubmitting && <div>Загрузка</div>}
+            <div className="form-btns">
+              <button disabled={isSubmitting || !!loginError} type="submit" className="btn btn-primary mr-3" onClick={() => setSebmitType('login')}>Log In</button>
+              <button disabled={isSubmitting || !!loginError} type="submit" className="btn btn-danger" onClick={() => setSebmitType('signin')}>Sign Up</button>
+              {isSubmitting && spiner}
+            </div>
           </Form>
         )}
       </Formik>

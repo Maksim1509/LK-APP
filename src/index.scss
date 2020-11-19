@@ -1,18 +1,44 @@
 @import "~bootstrap/scss/bootstrap";
 
+
+body {
+  background-color: black;
+}
+
+.container {
+  background-color: #fff;
+  height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .form-container {
+  position: relative;
   width: 400px;
   background-color: rgb(149, 172, 236);
   border-radius: 10px;
   padding: 20px;
   margin: 0 auto;
-  margin-top: 30vh;
   &:hover {
     box-shadow: 5px 5px 5px deepskyblue;
   }
 }
 
+.form-btns {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 40px;
+}
+
 .invalid-feedback {
   display: block;
   color: red;
+}
+
+.footer {
+  padding: 8px 16px;
+  text-align: right;
 }
